@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>premaidai_description</name>
+  <version>0.0.0</version>
+  <description>The premaidai_description package</description>
+
+  <maintainer email="chikuta@todo.todo">chikuta</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rviz</exec_depend>
+
+  <export>
+  </export>
+</package>

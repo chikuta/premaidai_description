@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<robot name="lleg" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_lleg" params="prefix parent *origin">
+
+    <link name="${prefix}_1z">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_1z.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_1y">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_1y.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_1x">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_1x.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_2y">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_2y.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_3y">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.01 0.01 0.01" />
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_foot">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_1z_joint" type="revolute">
+      <origin xyz="0 0.0217 0.01505" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${parent}"/>
+      <child link="${prefix}_1z"/>
+    </joint>
+
+    <joint name="${prefix}_1y_joint" type="revolute">
+      <origin xyz="0 0 -0.05407" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_1z"/>
+      <child link="${prefix}_1y"/>
+    </joint>
+
+    <joint name="${prefix}_1x_joint" type="revolute">
+      <origin xyz="0 0.01021 -0.03829" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_1y"/>
+      <child link="${prefix}_1x"/>
+    </joint>
+
+    <joint name="${prefix}_2y_joint" type="revolute">
+      <origin xyz="0 0 -0.06827" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_1x"/>
+      <child link="${prefix}_2y"/>
+    </joint>
+
+    <!-- MUST implement leg 3y to model  -->
+    <joint name="${prefix}_3y_joint" type="fixed">
+      <axis xyz="0 1 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_2y"/>
+      <child link="${prefix}_3y"/>
+    </joint>
+
+    <joint name="${prefix}_3x_joint" type="revolute">
+      <origin xyz="0 0 -0.06749" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_3y"/>
+      <child link="${prefix}_foot"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

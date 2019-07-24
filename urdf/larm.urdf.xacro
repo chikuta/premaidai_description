@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot name="arm" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_larm" params="prefix parent *origin">
+
+    <link name="${prefix}_1y">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_1y.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_1x">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_1x.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_2z">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_2z.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_2x">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_2x.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="${prefix}_hand">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_1y_joint" type="revolute">
+      <origin xyz="-0.01726 0.03829 0.097" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${parent}"/>
+      <child link="${prefix}_1y"/>
+    </joint>
+
+    <joint name="${prefix}_1x_joint" type="revolute">
+      <origin xyz="0 0.01925 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_1y"/>
+      <child link="${prefix}_1x"/>
+    </joint>
+
+    <joint name="${prefix}_2z_joint" type="revolute">
+      <origin xyz="0 0.02472 -0.05011" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_1x"/>
+      <child link="${prefix}_2z"/>
+    </joint>
+
+    <joint name="${prefix}_2x_joint" type="revolute">
+      <origin xyz="0 0.01329 -0.02744" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_2z"/>
+      <child link="${prefix}_2x"/>
+    </joint>
+
+    <joint name="${prefix}_hand_joint" type="revolute">
+      <origin xyz="-0.01002 0.01922 -0.04356" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="${prefix}_2x"/>
+      <child link="${prefix}_hand"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

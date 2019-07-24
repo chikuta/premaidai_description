@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="premaidai"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find premaidai_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/lleg.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/rleg.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/larm.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/rarm.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/body.urdf.xacro" />
+
+  <link name="base_link"/>
+
+  <xacro:premaidai_rleg prefix="rleg" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:premaidai_rleg>
+
+  <xacro:premaidai_lleg prefix="lleg" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:premaidai_lleg>
+
+  <xacro:premaidai_rarm prefix="rarm" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:premaidai_rarm>
+
+  <xacro:premaidai_larm prefix="larm" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:premaidai_larm>
+
+  <xacro:premaidai_body parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:premaidai_body>
+
+</robot>
