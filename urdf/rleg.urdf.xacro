@@ -39,7 +39,7 @@
       </visual>
     </link>
 
-    <link name="${prefix}_3y">
+    <link name="${prefix}_dummy">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
@@ -57,7 +57,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}_1z_joint" type="revolute">
+    <joint name="${prefix}_hpz_joint" type="revolute">
       <origin xyz="0 -0.0217 0.01505" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
@@ -65,23 +65,23 @@
       <child link="${prefix}_1z"/>
     </joint>
 
-    <joint name="${prefix}_1y_joint" type="revolute">
+    <joint name="${prefix}_hpx_joint" type="revolute">
       <origin xyz="0 0 -0.05407" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_1z"/>
       <child link="${prefix}_1y"/>
     </joint>
 
-    <joint name="${prefix}_1x_joint" type="revolute">
+    <joint name="${prefix}_hpy_joint" type="revolute">
       <origin xyz="0 -0.01021 -0.03829" rpy="0 0 0"/>
-      <axis xyz="1 0 0"/>
+      <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_1y"/>
       <child link="${prefix}_1x"/>
     </joint>
 
-    <joint name="${prefix}_2y_joint" type="revolute">
+    <joint name="${prefix}_kny_joint" type="revolute">
       <origin xyz="0 0 -0.06827" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
@@ -89,19 +89,18 @@
       <child link="${prefix}_2y"/>
     </joint>
 
-    <!-- MUST implement leg 3y to model  -->
-    <joint name="${prefix}_3y_joint" type="fixed">
+    <joint name="${prefix}_aky_joint" type="revolute">
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_2y"/>
-      <child link="${prefix}_3y"/>
+      <child link="${prefix}_dummy"/>
     </joint>
 
-    <joint name="${prefix}_3x_joint" type="revolute">
+    <joint name="${prefix}_akx_joint" type="revolute">
       <origin xyz="0 0 -0.06749" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_3y"/>
+      <parent link="${prefix}_dummy"/>
       <child link="${prefix}_foot"/>
     </joint>
 

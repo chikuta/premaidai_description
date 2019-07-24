@@ -19,6 +19,14 @@
       </visual>
     </link>
 
+    <link name="head_dummy">
+      <visual>
+        <geometry>
+          <box size="0.01 0.01 0.01" />
+        </geometry>
+      </visual>
+    </link>
+
     <link name="head">
       <visual>
         <geometry>
@@ -33,7 +41,7 @@
       <child link="body"/>
     </joint>
 
-    <joint name="head_pitch_joint" type="revolute">
+    <joint name="head_ny_joint" type="revolute">
       <origin xyz="-0.0319 0 0.1088" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
@@ -41,11 +49,19 @@
       <child link="neck"/>
     </joint>
 
-    <joint name="head_roll_joint" type="revolute">
-      <origin xyz="0 0 0.0362" rpy="0 0 0"/>
+    <joint name="head_nz_joint" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="neck"/>
+      <child link="head_dummy"/>
+    </joint>
+
+    <joint name="head_nx_joint" type="revolute">
+      <origin xyz="0 0 0.0362" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <parent link="head_dummy"/>
       <child link="head"/>
     </joint>
 

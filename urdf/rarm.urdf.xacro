@@ -48,7 +48,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}_1y_joint" type="revolute">
+    <joint name="${prefix}_shy_joint" type="revolute">
       <origin xyz="-0.01726 -0.03829 0.097" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
@@ -56,15 +56,15 @@
       <child link="${prefix}_1y"/>
     </joint>
 
-    <joint name="${prefix}_1x_joint" type="revolute">
+    <joint name="${prefix}_shx_joint" type="revolute">
       <origin xyz="0 -0.01925 0" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_1y"/>
       <child link="${prefix}_1x"/>
     </joint>
 
-    <joint name="${prefix}_2z_joint" type="revolute">
+    <joint name="${prefix}_ely_joint" type="revolute">
       <origin xyz="0 -0.02472 -0.05011" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
@@ -72,15 +72,15 @@
       <child link="${prefix}_2z"/>
     </joint>
 
-    <joint name="${prefix}_2x_joint" type="revolute">
+    <joint name="${prefix}_elx_joint" type="revolute">
       <origin xyz="0 -0.01329 -0.02744" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_2z"/>
       <child link="${prefix}_2x"/>
     </joint>
 
-    <joint name="${prefix}_hand_joint" type="revolute">
+    <joint name="${prefix}_wry_joint" type="revolute">
       <origin xyz="-0.01002 -0.01922 -0.04356" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
