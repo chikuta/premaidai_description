@@ -1,40 +1,40 @@
 <?xml version="1.0"?>
 <robot name="arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="premaidai_rarm" params="prefix parent *origin">
+  <xacro:macro name="premaidai_arm" params="prefix parent sign *origin">
 
-    <link name="${prefix}_1y">
+    <link name="${prefix}_uarm_joint">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_1y.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_1x">
+    <link name="${prefix}_uarm">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_1x.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_2z">
+    <link name="${prefix}_larm_joint">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_2z.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_2x">
+    <link name="${prefix}_larm">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_2x.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
         </geometry>
       </visual>
     </link>
@@ -49,42 +49,42 @@
     </link>
 
     <joint name="${prefix}_shy_joint" type="revolute">
-      <origin xyz="-0.01726 -0.03829 0.097" rpy="0 0 0"/>
+      <xacro:insert_block name="origin" />
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${parent}"/>
-      <child link="${prefix}_1y"/>
+      <child link="${prefix}_uarm_joint"/>
     </joint>
 
     <joint name="${prefix}_shx_joint" type="revolute">
-      <origin xyz="0 -0.01925 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.01925} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_1y"/>
-      <child link="${prefix}_1x"/>
+      <parent link="${prefix}_uarm_joint"/>
+      <child link="${prefix}_uarm"/>
     </joint>
 
     <joint name="${prefix}_ely_joint" type="revolute">
-      <origin xyz="0 -0.05587567 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.05587567} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_1x"/>
-      <child link="${prefix}_2z"/>
+      <parent link="${prefix}_uarm"/>
+      <child link="${prefix}_larm_joint"/>
     </joint>
 
     <joint name="${prefix}_elx_joint" type="revolute">
-      <origin xyz="0 -0.030488976696505 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.030488976696505} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_2z"/>
-      <child link="${prefix}_2x"/>
+      <parent link="${prefix}_larm_joint"/>
+      <child link="${prefix}_larm"/>
     </joint>
 
     <joint name="${prefix}_wry_joint" type="revolute">
-      <origin xyz="0.01002 -0.047611784255581 0" rpy="0 0 0"/>
+      <origin xyz="0.01002 ${sign*0.047611784255581} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_2x"/>
+      <parent link="${prefix}_larm"/>
       <child link="${prefix}_hand"/>
     </joint>
 

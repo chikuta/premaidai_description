@@ -3,29 +3,27 @@
   xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:include filename="$(find premaidai_description)/urdf/common.xacro" />
-  <xacro:include filename="$(find premaidai_description)/urdf/lleg.urdf.xacro" />
-  <xacro:include filename="$(find premaidai_description)/urdf/rleg.urdf.xacro" />
-  <xacro:include filename="$(find premaidai_description)/urdf/larm.urdf.xacro" />
-  <xacro:include filename="$(find premaidai_description)/urdf/rarm.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/leg.urdf.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/arm.urdf.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/body.urdf.xacro" />
 
   <link name="base_link"/>
 
-  <xacro:premaidai_rleg prefix="rleg" parent="base_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:premaidai_rleg>
+  <xacro:premaidai_leg prefix="r" parent="base_link" sign="-1.0">
+    <origin xyz="0 -0.0217 0.01505" rpy="0 0 0"/>
+  </xacro:premaidai_leg>
 
-  <xacro:premaidai_lleg prefix="lleg" parent="base_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:premaidai_lleg>
+  <xacro:premaidai_leg prefix="l" parent="base_link" sign="1.0">
+    <origin xyz="0 0.0217 0.01505" rpy="0 0 0"/>
+  </xacro:premaidai_leg>
 
-  <xacro:premaidai_rarm prefix="rarm" parent="base_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:premaidai_rarm>
+  <xacro:premaidai_arm prefix="r" parent="base_link" sign="-1.0">
+    <origin xyz="-0.01726 -0.03829 0.097" rpy="0 0 0"/>
+  </xacro:premaidai_arm>
 
-  <xacro:premaidai_larm prefix="larm" parent="base_link">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:premaidai_larm>
+  <xacro:premaidai_arm prefix="l" parent="base_link" sign="1.0">
+    <origin xyz="-0.01726 0.03829 0.097" rpy="0 0 0"/>
+  </xacro:premaidai_arm>
 
   <xacro:premaidai_body parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0"/>

@@ -1,40 +1,40 @@
 <?xml version="1.0"?>
-<robot name="rleg" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="leg" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="premaidai_rleg" params="prefix parent *origin">
+  <xacro:macro name="premaidai_leg" params="prefix parent sign *origin">
 
-    <link name="${prefix}_1z">
+    <link name="${prefix}_hip_joint">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_1z.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_1y">
+    <link name="${prefix}_uleg_root">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_1y.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_1x">
+    <link name="${prefix}_uleg">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_1x.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
         </geometry>
       </visual>
     </link>
 
-    <link name="${prefix}_2y">
+    <link name="${prefix}_lleg">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_2y.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
         </geometry>
       </visual>
     </link>
@@ -58,41 +58,41 @@
     </link>
 
     <joint name="${prefix}_hpz_joint" type="revolute">
-      <origin xyz="0 -0.0217 0.01505" rpy="0 0 0"/>
+      <xacro:insert_block name="origin" />
       <axis xyz="0 0 1"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${parent}"/>
-      <child link="${prefix}_1z"/>
+      <child link="${prefix}_hip_joint"/>
     </joint>
 
     <joint name="${prefix}_hpx_joint" type="revolute">
       <origin xyz="0 0 -0.05407" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_1z"/>
-      <child link="${prefix}_1y"/>
+      <parent link="${prefix}_hip_joint"/>
+      <child link="${prefix}_uleg_root"/>
     </joint>
 
     <joint name="${prefix}_hpy_joint" type="revolute">
-      <origin xyz="0 -0.01021 -0.03829" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.01021} -0.03829" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_1y"/>
-      <child link="${prefix}_1x"/>
+      <parent link="${prefix}_uleg_root"/>
+      <child link="${prefix}_uleg"/>
     </joint>
 
     <joint name="${prefix}_kny_joint" type="revolute">
       <origin xyz="0 0 -0.06827" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_1x"/>
-      <child link="${prefix}_2y"/>
+      <parent link="${prefix}_uleg"/>
+      <child link="${prefix}_lleg"/>
     </joint>
 
     <joint name="${prefix}_aky_joint" type="revolute">
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_2y"/>
+      <parent link="${prefix}_lleg"/>
       <child link="${prefix}_dummy"/>
     </joint>
 
