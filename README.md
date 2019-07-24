@@ -27,6 +27,12 @@
   $ roslaunch premaidai_description display.launch
 ```
 
+## 同梱モデルについて
+
+同梱モデルは黒イワシ(twitetr:@Schwarz_Sardine)さんのモデルを分解し、ROS用に再構築しています。
+Apache2.0ライセンス下で使用許可を得ています。ここに記して感謝します。 こちらがリポジトリです。
+https://github.com/kuroiwasi/PremaidAI_Model
+
 ## 参考
 
 * [PremaindAI_TechVerification](https://github.com/neon-izm/PremaindAI_TechVerification)
