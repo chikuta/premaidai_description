@@ -10,6 +10,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_uarm">
@@ -19,6 +25,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_larm_joint">
@@ -28,6 +40,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_larm">
@@ -37,6 +55,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_hand">
@@ -46,6 +70,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <joint name="${prefix}_shy_joint" type="revolute">

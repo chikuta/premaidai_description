@@ -9,6 +9,11 @@
             <mesh filename="package://premaidai_description/meshes/body.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <geometry>
+            <mesh filename="package://premaidai_description/meshes/body.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="neck">
@@ -17,6 +22,11 @@
             <mesh filename="package://premaidai_description/meshes/neck.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <geometry>
+            <mesh filename="package://premaidai_description/meshes/neck.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="head_dummy">
@@ -33,6 +43,11 @@
             <mesh filename="package://premaidai_description/meshes/head.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <geometry>
+            <mesh filename="package://premaidai_description/meshes/head.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <joint name="body_to_base_link" type="fixed">

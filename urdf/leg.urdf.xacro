@@ -10,6 +10,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_uleg_root">
@@ -19,6 +25,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_uleg">
@@ -28,6 +40,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_lleg">
@@ -37,6 +55,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_dummy">
@@ -55,6 +79,12 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
+        </geometry>
+      </collision>
     </link>
 
     <joint name="${prefix}_hpz_joint" type="revolute">
