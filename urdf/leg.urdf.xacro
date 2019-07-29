@@ -120,6 +120,7 @@
     </joint>
 
     <joint name="${prefix}_aky_joint" type="revolute">
+      <origin xyz="0 0 -0.06749" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_lleg"/>
@@ -127,7 +128,6 @@
     </joint>
 
     <joint name="${prefix}_akx_joint" type="revolute">
-      <origin xyz="0 0 -0.06749" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_dummy"/>
