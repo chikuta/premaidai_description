@@ -2,8 +2,8 @@
 
 ## 検証環境
 
-* Ubuntu 18.04 LTS
-* ROS melodic
+* Ubuntu 18.04 LTS / ROS melodic
+* Ubuntu 16.04 LTS / ROS kinetic
 
 ## 環境整備
 
