@@ -59,7 +59,7 @@
     <joint name="head_ny_joint" type="revolute">
       <origin xyz="-0.0319 0 0.1088" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="body"/>
       <child link="neck"/>
     </joint>
@@ -67,7 +67,7 @@
     <joint name="head_nz_joint" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="neck"/>
       <child link="head_dummy"/>
     </joint>
@@ -75,7 +75,7 @@
     <joint name="head_nx_joint" type="revolute">
       <origin xyz="0 0 0.0362" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="head_dummy"/>
       <child link="head"/>
     </joint>
