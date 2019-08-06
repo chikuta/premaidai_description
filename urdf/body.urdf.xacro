@@ -6,89 +6,83 @@
     <link name="body">
       <visual>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/body.dae"/>
+          <mesh filename="package://premaidai_description/meshes/body.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/body.dae"/>
+          <mesh filename="package://premaidai_description/meshes/body.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
 
-    <link name="neck">
+    <link name="neck_pitch">
       <visual>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/neck.dae"/>
+          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/neck.dae"/>
+          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
 
-    <link name="head_dummy">
+    <link name="head_yaw">
       <visual>
         <geometry>
-          <box size="0.01 0.01 0.01" />
+          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="head">
       <visual>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/head.dae"/>
+          <mesh filename="package://premaidai_description/meshes/head.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-            <mesh filename="package://premaidai_description/meshes/head.dae"/>
+          <mesh filename="package://premaidai_description/meshes/head.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
 
     <joint name="body_to_base_link" type="fixed">
-      <origin xyz="0.0236 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${parent}"/>
       <child link="body"/>
     </joint>
 
     <joint name="head_ny_joint" type="revolute">
-      <origin xyz="-0.0319 0 0.1088" rpy="0 0 0"/>
+      <origin xyz="0.0038738 0 0.132809" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="body"/>
-      <child link="neck"/>
+      <child link="neck_pitch"/>
     </joint>
 
     <joint name="head_nz_joint" type="revolute">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.0103485 0 0.011103" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="0" velocity="0"/>
-      <parent link="neck"/>
-      <child link="head_dummy"/>
+      <parent link="neck_pitch"/>
+      <child link="head_yaw"/>
     </joint>
 
     <joint name="head_nx_joint" type="revolute">
-      <origin xyz="0 0 0.0362" rpy="0 0 0"/>
+      <origin xyz="0 0 0.0129" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="0" velocity="0"/>
-      <parent link="head_dummy"/>
+      <parent link="head_yaw"/>
       <child link="head"/>
     </joint>
-
-<!-- MUST implement
-    <joint name="head_yaw_joint" type="revolute">
-      <origin xyz="0 0 0.0362" rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
-      <limit lower="0" upper="0" effort="0" velocity="0"/>
-      <parent link="neck"/>
-      <child link="head"/>
-    </joint>
- -->
-
   </xacro:macro>
 </robot>

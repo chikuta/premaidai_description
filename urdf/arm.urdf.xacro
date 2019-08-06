@@ -7,13 +7,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -22,13 +22,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -37,13 +37,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -52,13 +52,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -67,13 +67,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -87,15 +87,15 @@
     </joint>
 
     <joint name="${prefix}_shx_joint" type="revolute">
-      <origin xyz="0 ${sign*0.01925} 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.0189} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-pi / 2.0}" upper="${pi / 2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_uarm_joint"/>
       <child link="${prefix}_uarm"/>
     </joint>
 
     <joint name="${prefix}_ely_joint" type="revolute">
-      <origin xyz="0 ${sign*0.05587567} 0" rpy="0 0 0"/>
+      <origin xyz="0.0088013 ${sign*0.060007} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_uarm"/>
@@ -103,7 +103,7 @@
     </joint>
 
     <joint name="${prefix}_elx_joint" type="revolute">
-      <origin xyz="0 ${sign*0.030488976696505} 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.024054} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_larm_joint"/>
@@ -111,7 +111,7 @@
     </joint>
 
     <joint name="${prefix}_wry_joint" type="revolute">
-      <origin xyz="0.01002 ${sign*0.047611784255581} 0" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.061348} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_larm"/>

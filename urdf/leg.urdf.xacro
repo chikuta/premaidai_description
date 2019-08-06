@@ -7,13 +7,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -22,13 +22,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -37,13 +37,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -52,37 +52,43 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
 
-    <link name="${prefix}_dummy">
+    <link name="${prefix}_ankle">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <box size="0.01 0.01 0.01" />
+          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="${prefix}_foot">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -96,7 +102,7 @@
     </joint>
 
     <joint name="${prefix}_hpx_joint" type="revolute">
-      <origin xyz="0 0 -0.05407" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*-0.0021} -0.028" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_hip_joint"/>
@@ -104,7 +110,7 @@
     </joint>
 
     <joint name="${prefix}_hpy_joint" type="revolute">
-      <origin xyz="0 ${sign*0.01021} -0.03829" rpy="0 0 0"/>
+      <origin xyz="0 ${sign*0.0128525} -0.034358" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_uleg_root"/>
@@ -112,7 +118,7 @@
     </joint>
 
     <joint name="${prefix}_kny_joint" type="revolute">
-      <origin xyz="0 0 -0.06827" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.0652" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_uleg"/>
@@ -120,17 +126,18 @@
     </joint>
 
     <joint name="${prefix}_aky_joint" type="revolute">
-      <origin xyz="0 0 -0.06749" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.065" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
       <parent link="${prefix}_lleg"/>
-      <child link="${prefix}_dummy"/>
+      <child link="${prefix}_ankle"/>
     </joint>
 
     <joint name="${prefix}_akx_joint" type="revolute">
+      <origin xyz="0 0 -0.040677" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
-      <parent link="${prefix}_dummy"/>
+      <parent link="${prefix}_ankle"/>
       <child link="${prefix}_foot"/>
     </joint>
 

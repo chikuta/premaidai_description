@@ -10,19 +10,19 @@
   <link name="base_link"/>
 
   <xacro:premaidai_leg prefix="r" parent="base_link" sign="-1.0">
-    <origin xyz="0 -0.0217 0.01505" rpy="0 0 0"/>
+    <origin xyz="0.004225 -0.0195245 0.001412" rpy="0 0 0"/>
   </xacro:premaidai_leg>
 
   <xacro:premaidai_leg prefix="l" parent="base_link" sign="1.0">
-    <origin xyz="0 0.0217 0.01505" rpy="0 0 0"/>
+    <origin xyz="0.004225 0.0195245 0.001412" rpy="0 0 0"/>
   </xacro:premaidai_leg>
 
   <xacro:premaidai_arm prefix="r" parent="base_link" sign="-1.0">
-    <origin xyz="-0.01726 -0.03829 0.097" rpy="0 0 0"/>
+    <origin xyz="0 -0.0359 0.113043" rpy="0 0 0"/>
   </xacro:premaidai_arm>
 
   <xacro:premaidai_arm prefix="l" parent="base_link" sign="1.0">
-    <origin xyz="-0.01726 0.03829 0.097" rpy="0 0 0"/>
+    <origin xyz="0 0.0359 0.113043" rpy="0 0 0"/>
   </xacro:premaidai_arm>
 
   <xacro:premaidai_body parent="base_link">
