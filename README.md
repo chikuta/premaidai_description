@@ -36,6 +36,8 @@ https://github.com/kuroiwasi/PremaidAI_Model
 ## 参考
 
 * [PremaindAI_TechVerification](https://github.com/neon-izm/PremaindAI_TechVerification)
+* [PremaindAI_Model](https://github.com/kuroiwasi/PremaidAI_Model)
+* [プリメイドAIパーツ軽量](https://drive.google.com/file/d/18qxGj2l_tFbyiChA9kbnJ-sgjDKE4dCX/view)
 
 
 ## TODO
