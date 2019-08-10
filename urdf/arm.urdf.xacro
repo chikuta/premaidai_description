@@ -1,7 +1,15 @@
 <?xml version="1.0"?>
 <robot name="arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="premaidai_arm" params="prefix parent sign *origin">
+  <xacro:macro name="premaidai_arm" params="prefix parent side *origin">
+
+    <xacro:if value="${side=='right'}">
+      <xacro:property name="sign" value="-1"/>
+    </xacro:if>
+
+    <xacro:if value="${side=='left'}">
+      <xacro:property name="sign" value="1"/>
+    </xacro:if>
 
     <link name="${prefix}_uarm_joint">
       <visual>
@@ -81,7 +89,7 @@
     <joint name="${prefix}_shy_joint" type="revolute">
       <xacro:insert_block name="origin" />
       <axis xyz="0 1 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-108.0/180.0 * pi}" upper="${128.25/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="${parent}"/>
       <child link="${prefix}_uarm_joint"/>
     </joint>
@@ -89,7 +97,12 @@
     <joint name="${prefix}_shx_joint" type="revolute">
       <origin xyz="0 ${sign*0.0189} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-pi / 2.0}" upper="${pi / 2.0}" effort="0" velocity="0"/>
+      <xacro:if value="${side=='right'}">
+        <limit lower="${-3.0375/180.0 * pi}" upper="${91.56375/180.0 * pi}" effort="0" velocity="0"/>
+      </xacro:if>
+      <xacro:if value="${side=='left'}">
+        <limit lower="${-91.56375/180.0 * pi}" upper="${3.0375/180.0 * pi}" effort="0" velocity="0"/>
+      </xacro:if>
       <parent link="${prefix}_uarm_joint"/>
       <child link="${prefix}_uarm"/>
     </joint>
@@ -97,7 +110,7 @@
     <joint name="${prefix}_ely_joint" type="revolute">
       <origin xyz="0.0088013 ${sign*0.060007} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-128.68875/180.0 * pi}" upper="${134.325/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="${prefix}_uarm"/>
       <child link="${prefix}_larm_joint"/>
     </joint>
@@ -105,7 +118,12 @@
     <joint name="${prefix}_elx_joint" type="revolute">
       <origin xyz="0 ${sign*0.024054} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <xacro:if value="${side=='right'}">
+        <limit lower="${-13.5/180.0 * pi}" upper="${118.96875/180.0 * pi}" effort="0" velocity="0"/>
+      </xacro:if>
+      <xacro:if value="${side=='left'}">
+        <limit lower="${-118.96875/180.0 * pi}" upper="${13.5/180.0 * pi}" effort="0" velocity="0"/>
+      </xacro:if>
       <parent link="${prefix}_larm_joint"/>
       <child link="${prefix}_larm"/>
     </joint>
@@ -113,7 +131,7 @@
     <joint name="${prefix}_wry_joint" type="revolute">
       <origin xyz="0 ${sign*0.061348} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="0" velocity="0"/>
+      <limit lower="${-135.0/180.0 * pi}" upper="${118.125/180.0 * pi}" effort="0" velocity="0"/>
       <parent link="${prefix}_larm"/>
       <child link="${prefix}_hand"/>
     </joint>
