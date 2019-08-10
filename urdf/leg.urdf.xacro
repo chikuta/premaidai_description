@@ -15,13 +15,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_hip_joint.dae"/>
         </geometry>
       </collision>
     </link>
@@ -30,13 +30,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg_root.dae"/>
         </geometry>
       </collision>
     </link>
@@ -45,13 +45,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_uleg.dae"/>
         </geometry>
       </collision>
     </link>
@@ -60,13 +60,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_lleg.dae"/>
         </geometry>
       </collision>
     </link>
@@ -75,13 +75,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_ankle.dae"/>
         </geometry>
       </collision>
     </link>
@@ -90,13 +90,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/${prefix}_foot.dae"/>
         </geometry>
       </collision>
     </link>
