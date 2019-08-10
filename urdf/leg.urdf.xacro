@@ -1,7 +1,15 @@
 <?xml version="1.0"?>
 <robot name="leg" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="premaidai_leg" params="prefix parent sign *origin">
+  <xacro:macro name="premaidai_leg" params="prefix parent side *origin">
+
+    <xacro:if value="${side=='right'}">
+      <xacro:property name="sign" value="-1"/>
+    </xacro:if>
+
+    <xacro:if value="${side=='left'}">
+      <xacro:property name="sign" value="1"/>
+    </xacro:if>
 
     <link name="${prefix}_hip_joint">
       <visual>
