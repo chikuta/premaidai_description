@@ -6,12 +6,12 @@
     <link name="body">
       <visual>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/body.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/body.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/body.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/body.dae"/>
         </geometry>
       </collision>
     </link>
@@ -19,12 +19,12 @@
     <link name="neck_pitch">
       <visual>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/neck_pitch.dae"/>
         </geometry>
       </collision>
     </link>
@@ -32,12 +32,12 @@
     <link name="head_yaw">
       <visual>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/neck_yaw.dae"/>
         </geometry>
       </collision>
     </link>
@@ -45,12 +45,12 @@
     <link name="head">
       <visual>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/head.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/head.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://premaidai_description/meshes/head.dae" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://premaidai_description/meshes/head.dae"/>
         </geometry>
       </collision>
     </link>
