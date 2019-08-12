@@ -14,6 +14,11 @@
           <mesh filename="package://premaidai_description/meshes/body.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.4426"/>
+        <origin xyz="0.008509 0.000002 0.070698"/>
+        <inertia ixx="2871.143311e-10" ixy="-0.001151e-10" ixz="237.094467e-10" iyy="2672.078857e-10" iyz="-0.003379e-10" izz="1188.332153e-10"/>
+      </inertial>
     </link>
 
     <link name="neck_pitch">
@@ -27,6 +32,11 @@
           <mesh filename="package://premaidai_description/meshes/neck_pitch.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.01"/>
+        <origin xyz="-0.006449 0.000002 0.008964"/>
+        <inertia ixx="6.489763e-10" ixy="-0.000003e-10" ixz="-0.024047e-10" iyy="2.296302e-10" iyz="-0.000005e-10" izz="6.197822e-10"/>
+      </inertial>
     </link>
 
     <link name="head_yaw">
@@ -40,6 +50,11 @@
           <mesh filename="package://premaidai_description/meshes/neck_yaw.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.01"/>
+        <origin xyz="0.008100 0.000002 0.017871"/>
+        <inertia ixx="12.636111e-10" ixy="-0.000001e-10" ixz="0.0" iyy="23.689224e-10" iyz="0.0" izz="17.372910e-10"/>
+      </inertial>
     </link>
 
     <link name="head">
@@ -53,6 +68,11 @@
           <mesh filename="package://premaidai_description/meshes/head.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.1449"/>
+        <origin xyz="0.014213 0.000001 0.011813"/>
+        <inertia ixx="650.041687e-10" ixy="-0.000280e-10" ixz="49.702934e-10" iyy="598.413635e-10" iyz="-0.000379e-10" izz="588.398682e-10"/>
+      </inertial>
     </link>
 
     <joint name="body_to_base_link" type="fixed">

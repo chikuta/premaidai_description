@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="body_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_arm_gazebo" params="prefix">
+
+    <gazebo reference="${prefix}_uarm_joint">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_uarm">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_larm_joint">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_larm">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_hand">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

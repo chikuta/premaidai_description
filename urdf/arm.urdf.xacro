@@ -24,6 +24,11 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uarm_joint.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.0131"/>
+        <origin xyz="-0.000000 ${sign*0.005109} 0.000865"/>
+        <inertia ixx="39.090332e-10" ixy="0.000021e-10" ixz="0.000003e-10" iyy="116.438423e-10" iyz="${sign*-4.044059e-10}" izz="132.243393e-10"/>
+      </inertial>
     </link>
 
     <link name="${prefix}_uarm">
@@ -39,6 +44,11 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_uarm.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.0712"/>
+        <origin xyz="-0.000001 ${sign*0.021640} 0.000670"/>
+        <inertia ixx="356.620514e-10" ixy="-0.000020e-10" ixz="0.000026e-10" iyy="126.890160e-10" iyz="${sign*4.816492e-10}" izz="414.000244e-10"/>
+      </inertial>
     </link>
 
     <link name="${prefix}_larm_joint">
@@ -54,6 +64,11 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_larm_joint.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.0124"/>
+        <origin xyz="-0.008596 ${sign*0.015762} 0.002150"/>
+        <inertia ixx="70.485497e-10" ixy="${sign*104.342163e-10}" ixz="-0.000005e-10" iyy="188.648819e-10" iyz="${sign*-3.846500e-10}" izz="236.494141e-10"/>
+      </inertial>
     </link>
 
     <link name="${prefix}_larm">
@@ -69,6 +84,11 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_larm.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.0812"/>
+        <origin xyz="-0.008596 ${sign*0.027572} 0.000420"/>
+        <inertia ixx="342.361237e-10" ixy="${sign*-0.000036e-10}" ixz="0.000012e-10" iyy="141.587677e-10" iyz="${sign*0.382193e-10}" izz="414.116486e-10"/>
+      </inertial>
     </link>
 
     <link name="${prefix}_hand">
@@ -84,6 +104,11 @@
           <mesh filename="package://premaidai_description/meshes/${prefix}_hand.dae"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.0046"/>
+        <origin xyz="0.001817 ${sign*0.018911} 0.002717"/>
+        <inertia ixx="8.193970e-10" ixy="${sign*-0.178483e-10}" ixz="0.194812e-10" iyy="3.111708e-10" iyz="${sign*-2.003531e-10}" izz="9.081884e-10"/>
+      </inertial>
     </link>
 
     <joint name="${prefix}_shy_joint" type="revolute">

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="body_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_body_gazebo">
+    <gazebo reference="body">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="neck_pitch">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="neck_yaw">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="head">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+  </xacro:macro>
+</robot>
