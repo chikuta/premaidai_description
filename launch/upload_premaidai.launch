@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot" default="premaidai" />
+
+  <!-- load robot -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find premaidai_description)/robots/$(arg robot).urdf.xacro'" />
+</launch>

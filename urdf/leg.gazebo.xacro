@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="body_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_leg_gazebo" params="prefix">
+
+    <gazebo reference="${prefix}_hip_joint">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_uleg_root">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_uleg">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_lleg">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_ankle">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${prefix}_foot">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+</robot>
