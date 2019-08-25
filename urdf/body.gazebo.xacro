@@ -4,18 +4,39 @@
   <xacro:macro name="premaidai_body_gazebo">
     <gazebo reference="body">
       <selfCollide>true</selfCollide>
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="neck_pitch">
       <selfCollide>false</selfCollide>
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="neck_yaw">
       <selfCollide>false</selfCollide>
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="head">
-      <selfCollide>true</selfCollide>
+      <selfCollide>false</selfCollide>
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
+
+    <gazebo reference="head_ny_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="head_nz_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="head_nx_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
   </xacro:macro>
 </robot>

@@ -17,7 +17,7 @@
       <inertial>
         <mass value="0.4426"/>
         <origin xyz="0.008509 0.000002 0.070698"/>
-        <inertia ixx="2871.143311e-10" ixy="-0.001151e-10" ixz="237.094467e-10" iyy="2672.078857e-10" iyz="-0.003379e-10" izz="1188.332153e-10"/>
+        <inertia ixx="2871.143311e-5" ixy="-0.001151e-5" ixz="237.094467e-5" iyy="2672.078857e-5" iyz="-0.003379e-5" izz="1188.332153e-5"/>
       </inertial>
     </link>
 
@@ -35,7 +35,7 @@
       <inertial>
         <mass value="0.01"/>
         <origin xyz="-0.006449 0.000002 0.008964"/>
-        <inertia ixx="6.489763e-10" ixy="-0.000003e-10" ixz="-0.024047e-10" iyy="2.296302e-10" iyz="-0.000005e-10" izz="6.197822e-10"/>
+        <inertia ixx="6.489763e-5" ixy="-0.000003e-5" ixz="-0.024047e-5" iyy="2.296302e-5" iyz="-0.000005e-5" izz="6.197822e-5"/>
       </inertial>
     </link>
 
@@ -53,7 +53,7 @@
       <inertial>
         <mass value="0.01"/>
         <origin xyz="0.008100 0.000002 0.017871"/>
-        <inertia ixx="12.636111e-10" ixy="-0.000001e-10" ixz="0.0" iyy="23.689224e-10" iyz="0.0" izz="17.372910e-10"/>
+        <inertia ixx="12.636111e-5" ixy="-0.000001e-5" ixz="0.0" iyy="23.689224e-5" iyz="0.0" izz="17.372910e-5"/>
       </inertial>
     </link>
 
@@ -71,7 +71,7 @@
       <inertial>
         <mass value="0.1449"/>
         <origin xyz="0.014213 0.000001 0.011813"/>
-        <inertia ixx="650.041687e-10" ixy="-0.000280e-10" ixz="49.702934e-10" iyy="598.413635e-10" iyz="-0.000379e-10" izz="588.398682e-10"/>
+        <inertia ixx="650.041687e-5" ixy="-0.000280e-5" ixz="49.702934e-5" iyy="598.413635e-5" iyz="-0.000379e-5" izz="588.398682e-5"/>
       </inertial>
     </link>
 
@@ -84,7 +84,7 @@
     <joint name="head_ny_joint" type="revolute">
       <origin xyz="0.0038738 0 0.132809" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="body"/>
       <child link="neck_pitch"/>
     </joint>
@@ -92,7 +92,7 @@
     <joint name="head_nz_joint" type="revolute">
       <origin xyz="-0.0103485 0 0.011103" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="neck_pitch"/>
       <child link="head_yaw"/>
     </joint>
@@ -100,7 +100,7 @@
     <joint name="head_nx_joint" type="revolute">
       <origin xyz="0 0 0.0129" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="head_yaw"/>
       <child link="head"/>
     </joint>
