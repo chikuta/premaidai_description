@@ -4,23 +4,53 @@
   <xacro:macro name="premaidai_arm_gazebo" params="prefix">
 
     <gazebo reference="${prefix}_uarm_joint">
-      <selfCollide>true</selfCollide>
+      <!-- <selfCollide>false</selfCollide> -->
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="${prefix}_uarm">
-      <selfCollide>true</selfCollide>
+      <!-- <selfCollide>false</selfCollide> -->
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="${prefix}_larm_joint">
-      <selfCollide>true</selfCollide>
+      <!-- <selfCollide>false</selfCollide> -->
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="${prefix}_larm">
-      <selfCollide>true</selfCollide>
+      <!-- <selfCollide>false</selfCollide> -->
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
     </gazebo>
 
     <gazebo reference="${prefix}_hand">
-      <selfCollide>true</selfCollide>
+      <!-- <selfCollide>false</selfCollide> -->
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
+    </gazebo>
+
+    <gazebo reference="${prefix}_shy_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="${prefix}_shx_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="${prefix}_ely_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="${prefix}_elx_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="${prefix}_wry_joint">
+      <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
 
   </xacro:macro>

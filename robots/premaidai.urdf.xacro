@@ -37,4 +37,8 @@
   </xacro:premaidai_body>
   <xacro:premaidai_body_gazebo/>
 
+  <gazebo>
+    <plugin name="premaidai_plugin" filename="libPremaidAIPlugin.so"/>
+  </gazebo>
+
 </robot>

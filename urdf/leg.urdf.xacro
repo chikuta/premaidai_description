@@ -27,7 +27,7 @@
       <inertial>
         <mass value="0.0143"/>
         <origin xyz="0.000000 ${sign*0.000183} -0.010532"/>
-        <inertia ixx="20.138887e-10" ixy="-0.000001e-10" ixz="0.0e-10" iyy="53.757824e-10" iyz="${sign*-0.518773e-10}" izz="46.127151e-10"/>
+        <inertia ixx="20.138887e-5" ixy="-0.000001e-5" ixz="0.0e-5" iyy="53.757824e-5" iyz="${sign*-0.518773e-5}" izz="46.127151e-5"/>
       </inertial>
     </link>
 
@@ -47,7 +47,7 @@
       <inertial>
         <mass value="0.0648"/>
         <origin xyz="-0.000000 ${sign*0.013420} -0.004373"/>
-        <inertia ixx="246.003845e-10" ixy="${sign*-0.001517e-10}" ixz="-0.001688e-10" iyy="191.922195e-10" iyz="${sign*-6.165664e-10}" izz="238.454895e-10"/>
+        <inertia ixx="246.003845e-5" ixy="${sign*-0.001517e-5}" ixz="-0.001688e-5" iyy="191.922195e-5" iyz="${sign*-6.165664e-5}" izz="238.454895e-5"/>
       </inertial>
     </link>
 
@@ -67,7 +67,7 @@
       <inertial>
         <mass value="0.1134"/>
         <origin xyz="-0.000000 0.000001 -0.032601"/>
-        <inertia ixx="884.390869e-10" ixy="0.000002e-10" ixz="-0.000046e-10" iyy="825.489990e-10" iyz="-0.000031e-10" izz="222.801773e-10"/>
+        <inertia ixx="884.390869e-5" ixy="0.000002e-5" ixz="-0.000046e-5" iyy="825.489990e-5" iyz="-0.000031e-5" izz="222.801773e-5"/>
       </inertial>
     </link>
 
@@ -87,7 +87,7 @@
       <inertial>
         <mass value="0.0719"/>
         <origin xyz="-0.001624 ${sign*0.002494} -0.034776"/>
-        <inertia ixx="735.568420e-10" ixy="${sign*-1.871153e-10}" ixz="-35.647034e-10" iyy="434.662354e-10" iyz="${sign*0.247592e-10}" izz="480.555054e-10"/>
+        <inertia ixx="735.568420e-5" ixy="${sign*-1.871153e-5}" ixz="-35.647034e-5" iyy="434.662354e-5" iyz="${sign*0.247592e-5}" izz="480.555054e-5"/>
       </inertial>
     </link>
 
@@ -107,7 +107,7 @@
       <inertial>
         <mass value="0.0571"/>
         <origin xyz="-0.009629 0.000379 -0.003702"/>
-        <inertia ixx="175.244446e-10" ixy="-0.000004e-10" ixz="11.289989e-10" iyy="257.425598e-10" iyz="-0.000002e-10" izz="224.547821e-10"/>
+        <inertia ixx="175.244446e-5" ixy="-0.000004e-5" ixz="11.289989e-5" iyy="257.425598e-5" iyz="-0.000002e-5" izz="224.547821e-5"/>
       </inertial>
     </link>
 
@@ -127,14 +127,14 @@
       <inertial>
         <mass value="0.0941"/>
         <origin xyz="0.005014 ${sign*0.008793} -0.004123"/>
-        <inertia ixx="383.406982e-10" ixy="${sign*11.222215e-10}" ixz="12.157411e-10" iyy="1013.430359e-10" iyz="${sign*-1.649494e-10}" izz="1206.411377e-10"/>
+        <inertia ixx="383.406982e-5" ixy="${sign*11.222215e-5}" ixz="12.157411e-5" iyy="1013.430359e-5" iyz="${sign*-1.649494e-5}" izz="1206.411377e-5"/>
       </inertial>
     </link>
 
     <joint name="${prefix}_hpz_joint" type="revolute">
       <xacro:insert_block name="origin" />
       <axis xyz="0 0 1"/>
-      <limit lower="${-81.0/180.0 * pi}" upper="${102.43/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-81.0/180.0 * pi}" upper="${102.43/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="${parent}"/>
       <child link="${prefix}_hip_joint"/>
     </joint>
@@ -143,10 +143,10 @@
       <origin xyz="0 ${sign*-0.0021} -0.028" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-25.35/180.0 * pi}" upper="${22.713/180.0 * pi}" effort="0" velocity="0"/>
+        <limit lower="${-25.35/180.0 * pi}" upper="${22.713/180.0 * pi}" effort="10" velocity="1.0"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-22.713/180.0 * pi}" upper="${25.35/180.0 * pi}" effort="0" velocity="0"/>
+        <limit lower="${-22.713/180.0 * pi}" upper="${25.35/180.0 * pi}" effort="10" velocity="1.0"/>
       </xacro:if>
       <parent link="${prefix}_hip_joint"/>
       <child link="${prefix}_uleg_root"/>
@@ -155,7 +155,7 @@
     <joint name="${prefix}_hpy_joint" type="revolute">
       <origin xyz="0 ${sign*0.0128525} -0.034358" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-91.60/180.0 * pi}" upper="${90.213/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-91.60/180.0 * pi}" upper="${90.213/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="${prefix}_uleg_root"/>
       <child link="${prefix}_uleg"/>
     </joint>
@@ -163,7 +163,7 @@
     <joint name="${prefix}_kny_joint" type="revolute">
       <origin xyz="0 0 -0.0652" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-2.0925/180.0 * pi}" upper="${119.64/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-2.0925/180.0 * pi}" upper="${119.64/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="${prefix}_uleg"/>
       <child link="${prefix}_lleg"/>
     </joint>
@@ -171,7 +171,7 @@
     <joint name="${prefix}_aky_joint" type="revolute">
       <origin xyz="0 0 -0.065" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-61.3575/180.0 * pi}" upper="${24.3/180.0 * pi}" effort="0" velocity="0"/>
+      <limit lower="${-61.3575/180.0 * pi}" upper="${24.3/180.0 * pi}" effort="10" velocity="1.0"/>
       <parent link="${prefix}_lleg"/>
       <child link="${prefix}_ankle"/>
     </joint>
@@ -180,10 +180,10 @@
       <origin xyz="0 0 -0.040677" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-38.23875/180.0 * pi}" upper="${37.29375/180.0 * pi}" effort="0" velocity="0"/>
+        <limit lower="${-38.23875/180.0 * pi}" upper="${37.29375/180.0 * pi}" effort="10" velocity="1.0"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-37.29375/180.0 * pi}" upper="${38.23875/180.0 * pi}" effort="0" velocity="0"/>
+        <limit lower="${-37.29375/180.0 * pi}" upper="${38.23875/180.0 * pi}" effort="10" velocity="1.0"/>
       </xacro:if>
       <parent link="${prefix}_ankle"/>
       <child link="${prefix}_foot"/>
