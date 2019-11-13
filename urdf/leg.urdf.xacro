@@ -134,7 +134,8 @@
     <joint name="${prefix}_hpz_joint" type="revolute">
       <xacro:insert_block name="origin" />
       <axis xyz="0 0 1"/>
-      <limit lower="${-81.0/180.0 * pi}" upper="${102.43/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-81.0/180.0 * pi}" upper="${102.43/180.0 * pi}" effort="10" velocity="7.480"/>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${parent}"/>
       <child link="${prefix}_hip_joint"/>
     </joint>
@@ -143,11 +144,12 @@
       <origin xyz="0 ${sign*-0.0021} -0.028" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-25.35/180.0 * pi}" upper="${22.713/180.0 * pi}" effort="10" velocity="1.0"/>
+        <limit lower="${-25.35/180.0 * pi}" upper="${22.713/180.0 * pi}" effort="10" velocity="7.480"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-22.713/180.0 * pi}" upper="${25.35/180.0 * pi}" effort="10" velocity="1.0"/>
+        <limit lower="${-22.713/180.0 * pi}" upper="${25.35/180.0 * pi}" effort="10" velocity="7.480"/>
       </xacro:if>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_hip_joint"/>
       <child link="${prefix}_uleg_root"/>
     </joint>
@@ -155,7 +157,8 @@
     <joint name="${prefix}_hpy_joint" type="revolute">
       <origin xyz="0 ${sign*0.0128525} -0.034358" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-91.60/180.0 * pi}" upper="${90.213/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-91.60/180.0 * pi}" upper="${90.213/180.0 * pi}" effort="10" velocity="7.480"/>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_uleg_root"/>
       <child link="${prefix}_uleg"/>
     </joint>
@@ -163,7 +166,8 @@
     <joint name="${prefix}_kny_joint" type="revolute">
       <origin xyz="0 0 -0.0652" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-2.0925/180.0 * pi}" upper="${119.64/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-2.0925/180.0 * pi}" upper="${119.64/180.0 * pi}" effort="10" velocity="7.480"/>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_uleg"/>
       <child link="${prefix}_lleg"/>
     </joint>
@@ -171,7 +175,8 @@
     <joint name="${prefix}_aky_joint" type="revolute">
       <origin xyz="0 0 -0.065" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-61.3575/180.0 * pi}" upper="${24.3/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-61.3575/180.0 * pi}" upper="${24.3/180.0 * pi}" effort="10" velocity="7.480"/>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_lleg"/>
       <child link="${prefix}_ankle"/>
     </joint>
@@ -180,11 +185,12 @@
       <origin xyz="0 0 -0.040677" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-38.23875/180.0 * pi}" upper="${37.29375/180.0 * pi}" effort="10" velocity="1.0"/>
+        <limit lower="${-38.23875/180.0 * pi}" upper="${37.29375/180.0 * pi}" effort="10" velocity="7.480"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-37.29375/180.0 * pi}" upper="${38.23875/180.0 * pi}" effort="10" velocity="1.0"/>
+        <limit lower="${-37.29375/180.0 * pi}" upper="${38.23875/180.0 * pi}" effort="10" velocity="7.480"/>
       </xacro:if>
+      <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_ankle"/>
       <child link="${prefix}_foot"/>
     </joint>
