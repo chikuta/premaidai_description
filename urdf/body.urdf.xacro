@@ -79,30 +79,34 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${parent}"/>
       <child link="body"/>
+      <dynamics damping="0.95"/>
     </joint>
 
     <joint name="head_ny_joint" type="revolute">
       <origin xyz="0.0038738 0 0.132809" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-10.125/180.0 * pi}" upper="${23.625/180.0 * pi}" effort="10" velocity="10.0"/>
       <parent link="body"/>
       <child link="neck_pitch"/>
+      <dynamics damping="0.95"/>
     </joint>
 
     <joint name="head_nz_joint" type="revolute">
       <origin xyz="-0.0103485 0 0.011103" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-47.25/180.0 * pi}" upper="${47.25/180.0 * pi}" effort="10" velocity="10.0"/>
       <parent link="neck_pitch"/>
       <child link="head_yaw"/>
+      <dynamics damping="0.95"/>
     </joint>
 
     <joint name="head_nx_joint" type="revolute">
       <origin xyz="0 0 0.0129" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
-      <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="10" velocity="1.0"/>
+      <limit lower="${-21.9375/180.0 * pi}" upper="${28.6875/180.0 * pi}" effort="10" velocity="10.0"/>
       <parent link="head_yaw"/>
       <child link="head"/>
+      <dynamics damping="0.95"/>
     </joint>
   </xacro:macro>
 </robot>
