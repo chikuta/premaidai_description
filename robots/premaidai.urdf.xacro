@@ -5,10 +5,13 @@
   <xacro:include filename="$(find premaidai_description)/urdf/common.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/leg.urdf.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/leg.gazebo.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/leg.transmission.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/arm.urdf.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/arm.gazebo.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/arm.transmission.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/body.urdf.xacro" />
   <xacro:include filename="$(find premaidai_description)/urdf/body.gazebo.xacro" />
+  <xacro:include filename="$(find premaidai_description)/urdf/body.transmission.xacro" />
 
   <link name="base_link"/>
 
@@ -16,26 +19,31 @@
     <origin xyz="0.004225 -0.0195245 0.001412" rpy="0 0 0"/>
   </xacro:premaidai_leg>
   <xacro:premaidai_leg_gazebo prefix="r"/>
+  <xacro:premaidai_leg_transmission prefix="r"/>
 
   <xacro:premaidai_leg prefix="l" parent="base_link" side="left">
     <origin xyz="0.004225 0.0195245 0.001412" rpy="0 0 0"/>
   </xacro:premaidai_leg>
   <xacro:premaidai_leg_gazebo prefix="l"/>
+  <xacro:premaidai_leg_transmission prefix="l"/>
 
   <xacro:premaidai_arm prefix="r" parent="base_link" side="right">
     <origin xyz="0 -0.0359 0.113043" rpy="0 0 0"/>
   </xacro:premaidai_arm>
   <xacro:premaidai_arm_gazebo prefix="r"/>
+  <xacro:premaidai_arm_transmission prefix="r"/>
 
   <xacro:premaidai_arm prefix="l" parent="base_link" side="left">
     <origin xyz="0 0.0359 0.113043" rpy="0 0 0"/>
   </xacro:premaidai_arm>
   <xacro:premaidai_arm_gazebo prefix="l"/>
+  <xacro:premaidai_arm_transmission prefix="l"/>
 
   <xacro:premaidai_body parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:premaidai_body>
   <xacro:premaidai_body_gazebo/>
+  <xacro:premaidai_body_transmission/>
 
   <gazebo>
     <plugin name="premaidai_plugin" filename="libPremaidAIPlugin.so"/>
