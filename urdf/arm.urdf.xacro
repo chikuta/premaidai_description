@@ -133,10 +133,10 @@
       <origin xyz="0 ${sign*0.0189} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-3.0375/180.0 * pi}" upper="${91.56375/180.0 * pi}" effort="0.735" velocity="5.817"/>
+        <limit lower="${-3.0375/180.0 * pi}" upper="${91.56375/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-91.56375/180.0 * pi}" upper="${3.0375/180.0 * pi}" effort="0.735" velocity="5.817"/>
+        <limit lower="${-91.56375/180.0 * pi}" upper="${3.0375/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       </xacro:if>
       <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_uarm_joint"/>
@@ -146,7 +146,7 @@
     <joint name="${prefix}_ely_joint" type="revolute">
       <origin xyz="0.0088013 ${sign*0.060007} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-128.68875/180.0 * pi}" upper="${134.325/180.0 * pi}" effort="0.735" velocity="5.817"/>
+      <limit lower="${-128.68875/180.0 * pi}" upper="${134.325/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_uarm"/>
       <child link="${prefix}_larm_joint"/>
@@ -156,10 +156,10 @@
       <origin xyz="0 ${sign*0.024054} 0" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <xacro:if value="${side=='right'}">
-        <limit lower="${-13.5/180.0 * pi}" upper="${118.96875/180.0 * pi}" effort="0.735" velocity="5.817"/>
+        <limit lower="${-13.5/180.0 * pi}" upper="${118.96875/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       </xacro:if>
       <xacro:if value="${side=='left'}">
-        <limit lower="${-118.96875/180.0 * pi}" upper="${13.5/180.0 * pi}" effort="0.735" velocity="5.817"/>
+        <limit lower="${-118.96875/180.0 * pi}" upper="${13.5/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       </xacro:if>
       <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_larm_joint"/>
@@ -169,7 +169,7 @@
     <joint name="${prefix}_wry_joint" type="revolute">
       <origin xyz="0 ${sign*0.061348} 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
-      <limit lower="${-135.0/180.0 * pi}" upper="${118.125/180.0 * pi}" effort="0.735" velocity="5.817"/>
+      <limit lower="${-135.0/180.0 * pi}" upper="${118.125/180.0 * pi}" effort="0.9114" velocity="5.817"/>
       <dynamics damping="0.4" friction="0.0"/>
       <parent link="${prefix}_larm"/>
       <child link="${prefix}_hand"/>
