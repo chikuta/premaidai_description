@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="body_transmission" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_body_transmission">
+
+    <transmission reference="head_ny_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="head_ny_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="head_ny_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="head_nz_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="head_nz_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="head_nz_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="head_nx_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="head_nx_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="head_nx_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+</robot>

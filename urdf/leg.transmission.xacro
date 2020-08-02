@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot name="body_transmission" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="premaidai_leg_transmission" params="prefix">
+
+    <transmission reference="${prefix}_hpz_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_hpz_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_hpz_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="${prefix}_hpx_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_hpx_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_hpx_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="${prefix}_hpy_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_hpy_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_hpy_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="${prefix}_kny_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_kny_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_kny_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="${prefix}_aky_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_aky_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_aky_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission reference="${prefix}_akx_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <jont name="${prefix}_akx_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </jont>
+      <actuator name="${prefix}_akx_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+</robot>
